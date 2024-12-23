@@ -7,9 +7,18 @@
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+	<div id="sizeInfo">
+		<h1></h1>
+	</div>
+    <script type="text/javascript">
+		function updateSize() {
+			var width = window.innerWidth;
+			var height = window.innerHeight; // corrected here
+			document.getElementById('sizeInfo').children[0].innerText = "Width: " + width + " and Height: " + height;
+		}
+		window.onresize = updateSize;
+        updateSize(); // To update size on page load
+	</script>
 
 </body>
 
