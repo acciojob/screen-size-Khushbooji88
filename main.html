@@ -1,25 +1,28 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screen Size</title>
+  <script>
+    // Function to update the size info
+    function updateSize() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      
+      // Get the h1 element and update its content
+      const sizeInfo = document.getElementById('sizeInfo');
+      sizeInfo.innerHTML = `<h1>Width: ${width} and Height: ${height}</h1>`;
+    }
+
+    // Call updateSize initially to display size on page load
+    window.onload = updateSize;
+
+    // Add event listener to update the size when the window is resized
+    window.onresize = updateSize;
+  </script>
 </head>
-
 <body>
-	<div id="sizeInfo">
-		<h1></h1>
-	</div>
-    <script type="text/javascript">
-		function updateSize() {
-			var width = window.innerWidth;
-			var height = window.innerHeight; // corrected here
-			document.getElementById('sizeInfo').children[0].innerText = "Width: " + width + " and Height: " + height;
-		}
-		window.onresize = updateSize;
-        updateSize(); // To update size on page load
-	</script>
-
+  <div id="sizeInfo"></div>
 </body>
-
 </html>
